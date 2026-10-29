@@ -1,0 +1,3 @@
+/home/hatch/workspace/vidforge/app/src/main/java/com/vidforge/editor/TrimExporter.kt
+/home/hatch/workspace/vidforge/app/src/main/java/com/vidforge/editor/MainActivity.kt
+/home/hatch/workspace/vidforge/app/src/main/java/com/vidforge/editor/VideoTranscoder.kt

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnPick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_video" />
+
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/no_video"
+            android:textSize="14sp" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="12dp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/play" />
+
+            <Button
+                android:id="@+id/btnPreviewTrim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/preview_trim" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="1000" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00:00 / 00:00"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/trim_start"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/seekStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="1000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/trim_end"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/seekEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="1000"
+            android:progress="1000" />
+
+        <TextView
+            android:id="@+id/txtTrim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trim: 00:00 – 00:00"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/speed"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/chkMute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/mute_audio" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/orientation"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerOrient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnExport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/export_trim" />
+
+        <Button
+            android:id="@+id/btnSplit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/split_playhead" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Effects export (re-encode)"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Text overlay (optional)"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Text position"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerOverlayPos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Speed curve (effects export)"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerCurve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Text animation (effects export)"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerTextAnim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Crop"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Sticker shape"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerShape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Volume"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/chkFade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fade audio in/out (1 sec)" />
+
+        <Button
+            android:id="@+id/btnPickMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick background music (optional)" />
+
+        <TextView
+            android:id="@+id/txtMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No music picked."
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnExportEffects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Export with effects" />
+
+        <Button
+            android:id="@+id/btnCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save cover frame (current position)" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Join two clips"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnPickClip2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick second clip" />
+
+        <TextView
+            android:id="@+id/txtClip2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No second clip picked."
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transition"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerTransition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join clips and export" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="More tools"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rotate / flip (effects export)"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerRotate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Freeze last frame (effects export)"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerFreeze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Export quality (effects export)"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerQuality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnExtractAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Extract audio (trim range)" />
+
+        <Button
+            android:id="@+id/btnRecordVoiceover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Record voiceover" />
+
+        <Button
+            android:id="@+id/btnReverse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reverse video (trim range)" />
+
+        <TextView
+            android:id="@+id/txtVoiceover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No voiceover recorded. Voiceover mixes into effects export."
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note: speed above 1x drops audio on effects export to avoid desync. Effects export re-encodes video, so it is slower than lossless export."
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share_last" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>

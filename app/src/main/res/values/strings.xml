@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VidForge</string>
+    <string name="pick_video">Pick a video</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="preview_trim">Preview trim</string>
+    <string name="export_trim">Export trimmed video</string>
+    <string name="split_playhead">Split at playhead</string>
+    <string name="share_last">Share last export</string>
+    <string name="trim_start">Trim start</string>
+    <string name="trim_end">Trim end</string>
+    <string name="speed">Playback speed</string>
+    <string name="mute_audio">Mute audio on export</string>
+    <string name="orientation">Video orientation on export</string>
+    <string name="no_video">No video picked yet. Tap "Pick a video" to start.</string>
+    <string name="exporting">Exporting… please wait.</string>
+    <string name="export_done">Export saved to Movies/VidForge.</string>
+    <string name="export_failed">Export failed. Try a shorter clip.</string>
+    <string name="effects_exporting">Effects export… re-encoding, please wait.</string>
+    <string name="pick_first">Pehle video pick karo.</string>
+</resources>
